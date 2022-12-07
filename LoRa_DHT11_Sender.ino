@@ -97,7 +97,9 @@ void getReadings(){
 }
 
 void sendReadings() {
-  LoRaMessage = String(t) + String(h) + String(value);
+  //LoRaMessage = String(t) + String(h) + String(value);
+  LoRaMessage = String(t) + "/" + String(h) + "&" + String(value) + "#";
+  //Send LoRa packet to receiver
   //Send LoRa packet to receiver
   LoRa.beginPacket();
   LoRa.print(LoRaMessage);
